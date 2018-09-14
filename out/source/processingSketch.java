@@ -17,48 +17,53 @@ public class processingSketch extends PApplet {
 Walker w;
 
 public void setup() {
-  
-  frameRate(30);
 
-  // Create a walker object
-  w = new Walker();
+w = new Walker();
 
+background(255);
 }
 
 public void draw() {
-  background(255);
-  // Run the walker object
-  w.walk();
-  w.render();
+w.walk();
+w.display();
 }
 class Walker {
-  float x, y;
+    int x,y;
 
-  Walker() {
-    x = width/2;
-    y = height/2;
-  }
+    Walker() {
+        x = width/2;
+        y = height/2;
+    };
 
-  public void render() {
-    stroke(0);
-    fill(175);
-    rectMode(CENTER);
-    rect(x, y, 40, 40);
-  }
+    public void walk() {
+        int choice = PApplet.parseInt(random(4));
+        int r = PApplet.parseInt(random(255));
+        int g = PApplet.parseInt(random(255));
+        int b = PApplet.parseInt(random(255));
 
-  // Randomly move up, down, left, right, or stay in one place
-  public void walk() {
-    float vx = random(-2, 2);
-    float vy = random(-2, 2);
-    x += vx;
-    y += vy;
 
-    // Stay on the screen
-    x = constrain(x, 0, width-1);
-    y = constrain(y, 0, height-1);
-  }
+        if(choice == 0) {
+            x++;
+        } else if (choice == 1) {
+            x--;
+        } else if (choice == 2) {
+            y++;
+        } else {
+            y--;
+        }
+
+        x = constrain(x, 0, width -1);
+        x = constrain(y, o, height -1);
+    }
+
+    public void display() {
+        point(x, y);
+        stroke(r, g, b);
+     }
 }
-  public void settings() {  size(400,400); }
+
+  public void settings() { 
+size(800, 600); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "processingSketch" };
     if (passedArgs != null) {
