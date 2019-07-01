@@ -11,7 +11,7 @@ Video Tutorials: https://www.youtube.com/user/shiffman/playlists?shelf_id=6&sort
 - [X] Probability Basics
 - [X] Guassian Distribution
 - [X] Custom Distribution
-- [ ] Perlin Noise
+- [X] Perlin Noise
 
 #### Vectors
 - [ ] Vectors
